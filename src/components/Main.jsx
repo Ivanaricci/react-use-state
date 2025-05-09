@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useState } from 'react'
+
 
 
 
@@ -36,6 +37,9 @@ const Main = () => {
             description: "ReactJS è una libreria JavaScript per costruire interfacce utente, in particolare applicazioni a pagina singola. Consente agli sviluppatori di creare componenti UI riutilizzabili e di gestire efficacemente lo stato dell'applicazione."
         }
     ];
+
+    const [selectedLanguage, setActiveLanguage] = useState(languages[0]);
+
     return (
         <main>
             <div className="container">
@@ -47,8 +51,8 @@ const Main = () => {
                 <div>
                     <div className="card">
                         <div className="card-body">
-                            <h5 className="card-title">Titolo</h5>
-                            <p className="card-text">Descrizione</p>
+                            <h5 className="card-title">{selectedLanguage.title}</h5>
+                            <p className="card-text">{selectedLanguage.description}</p>
                         </div>
                     </div>
                 </div>
